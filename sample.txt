@@ -1,0 +1,13 @@
+$Q: what is animal
+$A: Car
+$A: Human
+$A: Cat
+$A: Home
+$C: Cat
+
+$Q: Is there anything that has wheels?
+$A: Car
+$A: Human
+$A: Cat
+$A: Home
+$C: Car
