@@ -17,7 +17,7 @@ function parseQuizData(filePath) {
   let answerCount = 0;
 
   lines.forEach(line => {
-    if (line.startsWith('$Q:')) {
+    if (line.toUpperCase().startsWith('$Q:')) {
       if (quizObject.question) {
         if (!hasAnswer || !hasCorrect) {
           throw new Error('Invalid format: $Q found before completing the previous question.');
@@ -35,7 +35,7 @@ function parseQuizData(filePath) {
       hasAnswer = false;
       hasCorrect = false;
       answerCount = 0;
-    } else if (line.startsWith('$A:')) {
+    } else if (line.toUpperCase().startsWith('$A:')) {
       if (!hasQuestion) {
         throw new Error('Invalid format: $A found before $Q.');
       }
@@ -45,7 +45,7 @@ function parseQuizData(filePath) {
       quizObject.answers.push(line.substring(3).trim());
       hasAnswer = true;
       answerCount += 1;
-    } else if (line.startsWith('$C:')) {
+    } else if (line.toUpperCase().startsWith('$C:')) {
       if (!hasQuestion || !hasAnswer) {
         throw new Error('Invalid format: $C found before $Q or $A.');
       }
