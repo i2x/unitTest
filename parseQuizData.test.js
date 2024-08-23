@@ -14,12 +14,12 @@ $A: Cat
 $A: Home
 $C: Cat
 
-$Q: Is there anything that has wheels?
-$A: Car
+$q: Is there anything that has wheels?
+$a: Car
 $A: Human
 $A: Cat
 $A: Home
-$C: Car
+$c: Car
 `;
 
     // Mock the file reading
@@ -92,4 +92,9 @@ $C: Home
 
     expect(() => parseQuizData('duplicateCorrectQuiz.txt')).toThrow('Invalid format: Duplicate $C found.');
   });
+
+
+
+
+
 });
